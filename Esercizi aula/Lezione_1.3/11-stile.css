@@ -1,0 +1,40 @@
+/* Stile globale per il testo */
+body {
+  font-family: 'Times New Roman', serif;
+  color: #333;
+}
+
+/* Stili specifici per il bordo delle immagini basato sul valore dell'attributo name */
+img[name="high"] {
+  border: 5px solid green;
+}
+
+img[name="medium"] {
+  border: 5px solid yellow;
+}
+
+img[name="low"] {
+  border: 5px solid red;
+}
+
+/* Cambia il colore e il box model dei titoli dei film basato su class e id */
+/* Class "ultima_uscita" - Colore rosso, box model personalizzato */
+.ultima_uscita {
+  color: red;
+  padding: 10px;       /* Spazio interno */
+  margin: 15px 0;      /* Spazio esterno */
+  border: 2px solid red; /* Bordo */
+  display: block;      /* Imposta il titolo come blocco */
+  background-color: #ffe6e6; /* Sfondo leggermente rosato */
+}
+
+/* Id "premio_della_critica" - Colore giallo, box model personalizzato */
+#premio_della_critica {
+  color: yellow;
+  padding: 20px;       /* Spazio interno maggiore */
+  margin: 20px 0;      /* Spazio esterno */
+  border: 3px dashed yellow; /* Bordo tratteggiato */
+  display: block;      /* Imposta il titolo come blocco */
+  background-color: #ffffcc; /* Sfondo giallo pallido */
+  box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.1); /* Aggiunge un'ombra */
+}

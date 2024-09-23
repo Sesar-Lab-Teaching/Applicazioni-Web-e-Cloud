@@ -1,0 +1,19 @@
+/* Stile globale per il testo */
+body {
+    font-family: 'Times New Roman', serif;
+    color: #333;
+}
+
+/* Stili specifici per il bordo delle immagini basato sul valore dell'attributo name */
+img[name="high"] {
+    border: 5px solid green;
+}
+
+img[name="medium"] {
+    border: 5px solid yellow;
+}
+
+img[name="low"] {
+    border: 5px solid red;
+}
+

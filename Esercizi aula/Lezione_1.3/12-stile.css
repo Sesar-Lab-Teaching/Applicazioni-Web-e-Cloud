@@ -1,0 +1,63 @@
+/* Dichiarazione delle variabili CSS nel root */
+:root {
+  /* Variabili per colori */
+  --colore-rossa: red;
+  --colore-gialla: yellow;
+  --sfondo-rossa-chiaro: #ffe6e6;
+  --sfondo-giallo-pallido: #ffffcc;
+  --colore-testo: #333;
+
+  /* Variabili per padding e margin */
+  --padding-uscita: 10px;
+  --margin-uscita: 15px 0;
+  --padding-critica: 20px;
+  --margin-critica: 20px 0;
+
+  /* Variabili per bordi */
+  --bordo-uscita: 2px solid var(--colore-rossa);
+  --bordo-critica: 3px dashed var(--colore-gialla);
+
+  /* Ombra */
+  --ombra-critica: 5px 5px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Stile globale per il testo */
+body {
+  font-family: 'Times New Roman', serif;
+  color: var(--colore-testo);
+}
+
+/* Stili specifici per il bordo delle immagini basato sul valore dell'attributo name */
+img[name="high"] {
+  border: 5px solid green;
+}
+
+img[name="medium"] {
+  border: 5px solid yellow;
+}
+
+img[name="low"] {
+  border: 5px solid red;
+}
+
+/* Cambia il colore e il box model dei titoli dei film basato su class e id */
+/* Class "ultima_uscita" - Colore rosso, box model personalizzato */
+.ultima_uscita {
+  color: var(--colore-rossa);
+  padding: var(--padding-uscita);
+  margin: var(--margin-uscita);
+  border: var(--bordo-uscita);
+  display: block;
+  background-color: var(--sfondo-rossa-chiaro);
+}
+
+/* Id "premio_della_critica" - Colore giallo, box model personalizzato */
+#premio_della_critica {
+  color: var(--colore-gialla);
+  padding: var(--padding-critica);
+  margin: var(--margin-critica);
+  border: var(--bordo-critica);
+  display: block;
+  background-color: var(--sfondo-giallo-pallido);
+  box-shadow: var(--ombra-critica);
+}
