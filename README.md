@@ -1,2 +1,2 @@
-# Reti-di-Calcolatori-Lab
-Laboratorio dell'insegnamento di reti di calcolatori SSRI
+# Applicazioni Web e Cloud
+Codice esempi ed esercizi dell'insegnamento di applicazioni web e cloud
