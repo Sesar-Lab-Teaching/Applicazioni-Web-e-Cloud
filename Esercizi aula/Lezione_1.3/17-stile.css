@@ -1,0 +1,49 @@
+/* Stile di base per gli elementi trasformati */
+body {
+  font-family: 'Arial', sans-serif;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  background-color: #f0f0f0;
+}
+
+.box {
+  width: 200px;
+  height: 100px;
+  margin: 20px;
+  background-color: lightblue;
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.2em;
+  border-radius: 10px;
+  transition: transform 0.5s ease;
+}
+
+/* Rotazione di 45 gradi */
+#rotate {
+  transform: rotate(45deg);
+}
+
+/* Scalare l'elemento di 1.5 volte */
+#scale {
+  transform: scale(1.5);
+}
+
+/* Traslazione dell'elemento di 100px orizzontalmente e 50px verticalmente */
+#translate {
+  transform: translate(100px, 50px);
+}
+
+/* Inclinazione di 20 gradi lungo l'asse X e 10 gradi lungo l'asse Y */
+#skew {
+  transform: skew(20deg, 10deg);
+}
+
+/* Rotazione 3D di 45 gradi lungo gli assi X e Y */
+#rotate-3d {
+  transform: rotateX(45deg) rotateY(45deg);
+}

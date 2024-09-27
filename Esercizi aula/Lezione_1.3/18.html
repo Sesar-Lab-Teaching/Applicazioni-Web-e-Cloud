@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Trasformazioni al Click</title>
+    <style>
+        /* Stile di base per il div */
+        .box {
+            width: 200px;
+            height: 200px;
+            background-color: red; /* Colore iniziale */
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.2em;
+            color: white;
+            border-radius: 10px;
+            transition: transform 0.5s ease, background-color 0.5s ease;
+            cursor: pointer;
+            user-select: none; /* Evita la selezione del testo all'interno */
+        }
+
+        /* Stile attivato al on mouse hover */
+        .box:hover {
+            transform: rotate(90deg) scale(1.5); /* Rotazione di 45 gradi e ingrandimento */
+            background-color: blue; /* Cambia il colore in blu */
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Div che scatena la trasformazione e transizione -->
+    <div class="box">
+        Puntami!
+    </div>
+
+</body>
+</html>

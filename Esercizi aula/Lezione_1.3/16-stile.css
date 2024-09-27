@@ -1,0 +1,60 @@
+/* Stile generale per il corpo della pagina */
+body {
+  font-family: 'Arial', sans-serif;
+  color: #333;
+  padding: 20px;
+}
+
+/* Impostazioni di default per il background */
+body {
+  background-color: lightgray; /* Colore di default */
+}
+
+/* Cambia il colore di background con le media query */
+@media (max-width: 768px) {
+  body {
+      background-color: green; /* Verde per schermi piccoli */
+  }
+}
+
+@media (min-width: 769px) {
+  body {
+      background-color: pink; /* Rosa per schermi grandi */
+  }
+}
+
+/* Stili per la tabella dei film */
+table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+th, td {
+  padding: 10px;
+  text-align: left;
+  border: 1px solid #ccc;
+}
+
+/* Stili per i titoli */
+.ultima_uscita {
+  color: red;
+  font-weight: bold;
+}
+
+#premio_della_critica {
+  color: yellow;
+  font-weight: bold;
+}
+
+/* Stili per le immagini in base al valore dell'attributo name */
+img[name="high"] {
+  border: 5px solid green;
+}
+
+img[name="medium"] {
+  border: 5px solid yellow;
+}
+
+img[name="low"] {
+  border: 5px solid red;
+}
