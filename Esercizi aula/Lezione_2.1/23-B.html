@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rimuovi e Modifica Film</title>
+    <style>
+        .film {
+            border: 1px solid #ccc;
+            padding: 20px;
+            margin: 10px;
+            width: 300px;
+        }
+        .film img {
+            width: 100%;
+            height: auto;
+        }
+        .film-container {
+            display: flex;
+            flex-wrap: wrap;
+        }
+    </style>
+</head>
+<body onload="rimuoviEModificaFilm()">
+
+    <h1>Film in Programmazione</h1>
+    <div class="film-container" id="elenco-film">
+        <!-- Film già presenti -->
+        <div class="film" id="film-1">
+            <h2>Mad Max: Fury Road</h2>
+            <img src="https://picsum.photos/300/450?1" alt="Locandina Mad Max">
+            <p>Un futuro post-apocalittico dominato dalla violenza.</p>
+        </div>
+        <div class="film" id="film-2">
+            <h2>The Mask</h2>
+            <img src="https://picsum.photos/300/450?2" alt="Locandina The Mask">
+            <p>Un uomo comune trova una maschera con poteri straordinari.</p>
+        </div>
+    </div>
+
+    <script>
+        function rimuoviEModificaFilm() {
+            const elencoFilm = document.getElementById("elenco-film");
+
+            // Rimuove il film con id "film-2"
+            const filmDaRimuovere = document.getElementById("film-2");
+            if (filmDaRimuovere) {
+                elencoFilm.removeChild(filmDaRimuovere);
+            }
+
+            // Modifica il film con id "film-1"
+            const filmDaModificare = document.getElementById("film-1");
+            if (filmDaModificare) {
+                filmDaModificare.querySelector("h2").innerText = "Mad Max: Fury Road - Extended";
+                filmDaModificare.querySelector("p").innerText = "Una versione estesa del classico post-apocalittico.";
+            }
+        }
+    </script>
+
+</body>
+</html>

@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aggiungi Film</title>
+    <style>
+        .film {
+            border: 1px solid #ccc;
+            padding: 20px;
+            margin: 10px;
+            width: 300px;
+        }
+        .film img {
+            width: 100%;
+            height: auto;
+        }
+        .film-container {
+            display: flex;
+            flex-wrap: wrap;
+        }
+    </style>
+</head>
+<body onload="aggiungiFilm()">
+
+    <h1>Film in Programmazione</h1>
+    <div class="film-container" id="elenco-film">
+        <!-- Film già presenti -->
+        <div class="film">
+            <h2>Mad Max: Fury Road</h2>
+            <img src="https://picsum.photos/300/450?1" alt="Locandina Mad Max">
+            <p>Un futuro post-apocalittico dominato dalla violenza.</p>
+        </div>
+        <div class="film">
+            <h2>The Mask</h2>
+            <img src="https://picsum.photos/300/450?2" alt="Locandina The Mask">
+            <p>Un uomo comune trova una maschera con poteri straordinari.</p>
+        </div>
+    </div>
+
+    <script>
+        function aggiungiFilm() {
+            const elencoFilm = document.getElementById("elenco-film");
+
+            // Crea un div per il nuovo film e gli aggiunge la classe "film"
+            const nuovoFilmDiv = document.createElement("div");
+            nuovoFilmDiv.classList.add("film");
+
+            // Crea e aggiunge il titolo del film
+            const titolo = document.createElement("h2");
+            titolo.textContent = "Interstellar";
+            nuovoFilmDiv.appendChild(titolo);
+
+            // Crea e aggiunge l'immagine del film
+            const immagine = document.createElement("img");
+            immagine.src = "https://picsum.photos/300/450?3";
+            immagine.alt = "Locandina Interstellar";
+            nuovoFilmDiv.appendChild(immagine);
+
+            // Crea e aggiunge la descrizione del film
+            const descrizione = document.createElement("p");
+            descrizione.textContent = "Un gruppo di astronauti cerca nuovi mondi per l'umanità.";
+            nuovoFilmDiv.appendChild(descrizione);
+
+            // Aggiunge il nuovo film al contenitore principale
+            elencoFilm.appendChild(nuovoFilmDiv);
+        }
+    </script>
+
+</body>
+</html>

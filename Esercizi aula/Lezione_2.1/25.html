@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Esempio di Scope in JavaScript</title>
+</head>
+<body>
+
+    <h1>Esempio di Variabile Globale in JavaScript</h1>
+    <p>Apri la pagina per vedere l'alert con il valore della variabile globale.</p>
+
+    <script>
+        // Variabile globale
+        let pippo = 10;
+
+        // Funzione che utilizza la variabile globale
+        var fz = function() {
+            console.log(pippo); // Mostrerà il valore globale di pippo
+            alert(pippo); // Mostrerà il valore globale di pippo
+        }
+
+        // Invoca la funzione
+        fz();
+    </script>
+
+</body>
+</html>
