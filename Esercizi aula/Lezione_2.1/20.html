@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Divisione con JS</title>
+</head>
+<body>
+    <div id="risultato"></div>
+
+    <script>
+        function divisione() {
+            // Chiediamo i due numeri tramite prompt
+            let numero1 = parseInt(prompt("Inserisci il primo numero:"));
+            let numero2 = parseInt(prompt("Inserisci il secondo numero:"));
+
+            // Riferimento al div per mostrare il risultato
+            let risultatoDiv = document.getElementById("risultato");
+
+            // Verifica se il secondo numero è zero
+            if (numero2 === 0) {
+                risultatoDiv.innerHTML = "Errore: divisione per zero non consentita.";
+            } else {
+                // Calcolo della divisione
+                let risultato = numero1 / numero2;
+                risultatoDiv.innerHTML = "Il risultato della divisione è: " + risultato;
+            }
+        }
+
+        // Chiamata alla funzione
+        divisione();
+    </script>
+</body>
+</html>

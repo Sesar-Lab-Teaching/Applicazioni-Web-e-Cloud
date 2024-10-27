@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Seleziona Film</title>
+    <style>
+        #descrizione-film {
+            margin-top: 20px;
+            padding: 10px;
+            border: 1px solid #ccc;
+            width: 300px;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Seleziona il tuo film preferito</h1>
+
+    <!-- Prima form: Inserimento del tipo di film -->
+    <form id="form-genere">
+        <label for="genere">Inserisci il genere di film preferito:</label>
+        <input type="text" id="genere" name="genere">
+        <button type="submit">Cerca Film</button>
+    </form>
+
+    <!-- Seconda form: Selezione del film in base al genere -->
+    <form id="form-film" style="display:none;">
+        <label for="film-select">Scegli un film:</label>
+        <select id="film-select" name="film">
+            <!-- Opzioni che verranno aggiunte dinamicamente -->
+        </select>
+        <button type="submit">Mostra Descrizione</button>
+    </form>
+
+    <!-- Div per mostrare la descrizione del film -->
+    <div id="descrizione-film"></div>
+
+    <script>
+        // Oggetto con le informazioni sui film per genere, senza array
+        const filmPerGenere = {
+            "azione": {
+                "Mad Max: Fury Road": "Un futuro post-apocalittico dominato dalla violenza.",
+                "Die Hard": "Un poliziotto affronta dei terroristi per salvare degli ostaggi."
+            },
+            "commedia": {
+                "The Mask": "Un uomo comune trova una maschera con poteri straordinari.",
+                "Scemo più Scemo": "Due amici intraprendono un assurdo viaggio."
+            },
+            "fantascienza": {
+                "Interstellar": "Un gruppo di astronauti cerca nuovi mondi per l'umanità.",
+                "Blade Runner 2049": "Un futuro distopico con replicanti e cacciatori di androidi."
+            }
+        };
+
+        // Primo form: Cerca film in base al genere
+        const formGenere = document.getElementById('form-genere');
+        const formFilm = document.getElementById('form-film');
+        const filmSelect = document.getElementById('film-select');
+        const descrizioneFilmDiv = document.getElementById('descrizione-film');
+
+        formGenere.addEventListener('submit', function(event) {
+            event.preventDefault(); // Evita il refresh della pagina
+
+            // Ottiene il genere inserito
+            const genereInserito = document.getElementById('genere').value.toLowerCase();
+
+            // Controlla se il genere inserito esiste nella lista predefinita
+            if (filmPerGenere[genereInserito]) {
+                // Svuota eventuali vecchie opzioni nel selectbox
+                filmSelect.innerHTML = "";
+
+                // Popola la selectbox con i film corrispondenti al genere
+                for (const titolo in filmPerGenere[genereInserito]) {
+                    const option = document.createElement('option');
+                    option.value = titolo;
+                    option.textContent = titolo;
+                    filmSelect.appendChild(option);
+                }
+
+                // Mostra il form per selezionare un film
+                formFilm.style.display = "block";
+                descrizioneFilmDiv.innerHTML = ""; // Svuota eventuali descrizioni precedenti
+
+            } else {
+                alert("Genere non trovato. Inserisci un genere valido (azione, commedia, fantascienza).");
+            }
+        });
+
+        // Secondo form: Mostra descrizione del film selezionato
+        formFilm.addEventListener('submit', function(event) {
+            event.preventDefault(); // Evita il refresh della pagina
+
+            // Ottiene il film selezionato
+            const filmSelezionato = filmSelect.value;
+            const genereInserito = document.getElementById('genere').value.toLowerCase();
+
+            // Cerca e mostra la descrizione del film selezionato
+            if (filmPerGenere[genereInserito] && filmPerGenere[genereInserito][filmSelezionato]) {
+                descrizioneFilmDiv.innerHTML = `<strong>${filmSelezionato}</strong>: ${filmPerGenere[genereInserito][filmSelezionato]}`;
+            }
+        });
+    </script>
+
+</body>
+</html>
