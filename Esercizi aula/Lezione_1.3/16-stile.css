@@ -1,60 +1,56 @@
-/* Stile generale per il corpo della pagina */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
 body {
-  font-family: 'Arial', sans-serif;
-  color: #333;
+  font-family: Arial, sans-serif;
+}
+
+.container {
+  display: grid;
+  grid-template-columns: 1fr 3fr 1fr;
+  grid-template-rows: auto 1fr auto;
+  gap: 10px;
+  height: 100vh;
+  grid-template-areas:
+      "header header header"
+      "menu main right"
+      "menu footer footer";
+}
+
+.header {
+  grid-area: header;
+  background-color: lightblue;
+  text-align: center;
   padding: 20px;
 }
 
-/* Impostazioni di default per il background */
-body {
-  background-color: lightgray; /* Colore di default */
+.menu {
+  grid-area: menu;
+  background-color: lightblue;
+  padding: 20px;
+  text-align: center;
 }
 
-/* Cambia il colore di background con le media query */
-@media (max-width: 768px) {
-  body {
-      background-color: green; /* Verde per schermi piccoli */
-  }
+.main {
+  grid-area: main;
+  background-color: lightblue;
+  padding: 20px;
+  text-align: center;
 }
 
-@media (min-width: 769px) {
-  body {
-      background-color: pink; /* Rosa per schermi grandi */
-  }
+.right {
+  grid-area: right;
+  background-color: lightblue;
+  padding: 20px;
+  text-align: center;
 }
 
-/* Stili per la tabella dei film */
-table {
-  width: 100%;
-  border-collapse: collapse;
-}
-
-th, td {
-  padding: 10px;
-  text-align: left;
-  border: 1px solid #ccc;
-}
-
-/* Stili per i titoli */
-.ultima_uscita {
-  color: red;
-  font-weight: bold;
-}
-
-#premio_della_critica {
-  color: yellow;
-  font-weight: bold;
-}
-
-/* Stili per le immagini in base al valore dell'attributo name */
-img[name="high"] {
-  border: 5px solid green;
-}
-
-img[name="medium"] {
-  border: 5px solid yellow;
-}
-
-img[name="low"] {
-  border: 5px solid red;
+.footer {
+  grid-area: footer;
+  background-color: lightblue;
+  text-align: center;
+  padding: 20px;
 }

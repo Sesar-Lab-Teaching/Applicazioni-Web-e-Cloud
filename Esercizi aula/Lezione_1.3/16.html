@@ -3,47 +3,16 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Film in Programmazione</title>
-    <!-- Collegamento al file CSS esterno -->
-    <link rel="stylesheet" href="16-stile.css">
+    <title>Layout con Grid</title>
+    <link rel="stylesheet" href="15-stile.css">
 </head>
 <body>
-
-    <!-- Nome del Cinema -->
-    <h1>Cinema Lumière</h1>
-
-    <!-- Paragrafo descrittivo del Cinema -->
-    <p>
-        Il Cinema Lumière è uno dei cinema storici della città, noto per la sua vasta selezione di film d'autore e blockbuster internazionali.
-    </p>
-
-    <!-- Tabella con l'elenco dei film -->
-    <table border="1" cellpadding="10">
-        <thead>
-            <tr>
-                <th>Titolo del Film</th>
-                <th>Descrizione</th>
-                <th>Locandina</th>
-            </tr>
-        </thead>
-        <tbody>
-            <tr>
-                <td><strong class="ultima_uscita">Oppenheimer</strong></td>
-                <td>Un avvincente biopic sulla vita del fisico J. Robert Oppenheimer e il suo ruolo nello sviluppo della bomba atomica.</td>
-                <td><img src="oppenheimer.jpg" alt="Locandina Oppenheimer" name="high"></td>
-            </tr>
-            <tr>
-                <td><strong class="ultima_uscita">Barbie</strong></td>
-                <td>Barbie si trova in un'avventura magica e surreale che sfida le aspettative.</td>
-                <td><img src="barbie.jpg" alt="Locandina Barbie" name="medium"></td>
-            </tr>
-            <tr>
-                <td><strong id="premio_della_critica">Mission: Impossible - Dead Reckoning</strong></td>
-                <td>Ethan Hunt ritorna per affrontare nuove sfide in una missione impossibile, piena di azione e suspense.</td>
-                <td><img src="mission-impossible.jpg" alt="Locandina Mission: Impossible" name="low"></td>
-            </tr>
-        </tbody>
-    </table>
-
+    <div class="container">
+        <header class="header">Header</header>
+        <nav class="menu">Menu</nav>
+        <main class="main">Main</main>
+        <aside class="right">Right</aside>
+        <footer class="footer">Footer</footer>
+    </div>
 </body>
 </html>
