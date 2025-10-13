@@ -3,64 +3,72 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Card con Modal</title>
+    <title>Catalogo Prodotti</title>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.2/css/bootstrap.min.css" rel="stylesheet">
 </head>
 <body class="bg-light">
-    <div class="container py-5">
-        <div class="row justify-content-center">
-            <div class="col-12 col-md-6 col-lg-4">
-                
-                <!-- Card -->
-                <div class="card shadow-lg">
-                    <img src="https://placehold.co/400x300/0d6efd/ffffff?text=Prodotto+Premium" class="card-img-top" alt="Prodotto Premium">
-                    <div class="card-body">
-                        <h5 class="card-title">Smartwatch Avanzato</h5>
-                        <p class="card-text">
-                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
-                        </p>
-                        <!-- Bottone che apre il modal -->
-                        <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#detailsModal">
-                            Apri dettagli
-                        </button>
+    <!-- Container Fluid -->
+    <div class="container-fluid p-4">
+        <h1 class="text-center mb-5">Catalogo Prodotti</h1>
+        
+        <!-- Riga principale con tre colonne -->
+        <div class="row g-4">
+            <!-- Prima colonna: 3 (desktop), 6 (tablet), 12 (mobile) -->
+            <div class="col-12 col-md-6 col-lg-3">
+                <div class="card h-100 shadow-sm">
+                    <img src="https://placehold.co/400x300/6f42c1/ffffff?text=Laptop+Pro" class="card-img-top" alt="Laptop Pro">
+                    <div class="card-body d-flex flex-column">
+                        <h5 class="card-title">Laptop Pro 2024</h5>
+                        <p class="card-text flex-grow-1">Prestazioni professionali con processore di ultima generazione. Ideale per lavoro e creatività.</p>
+                        <a href="#" class="btn btn-primary mt-2">Dettagli</a>
                     </div>
                 </div>
-
             </div>
-        </div>
-    </div>
 
-    <!-- Modal -->
-    <div class="modal fade" id="detailsModal" tabindex="-1" aria-labelledby="detailsModalLabel" aria-hidden="true">
-        <div class="modal-dialog modal-dialog-centered">
-            <div class="modal-content">
-                
-                <!-- Header del Modal -->
-                <div class="modal-header">
-                    <h5 class="modal-title" id="detailsModalLabel">Dettagli Smartwatch Avanzato</h5>
-                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            <!-- Seconda colonna: 6 (desktop), 6 (tablet), 12 (mobile) -->
+            <div class="col-12 col-md-6 col-lg-6">
+                <!-- Riga annidata con due colonne -->
+                <div class="row g-3 h-100">
+                    
+                    <!-- Prima colonna interna: 6 (desktop), 12 (mobile) -->
+                    <div class="col-12 col-lg-6">
+                        <div class="card h-100 shadow-sm">
+                            <img src="https://placehold.co/400x300/20c997/ffffff?text=Smartphone+X" class="card-img-top" alt="Smartphone X">
+                            <div class="card-body d-flex flex-column">
+                                <h5 class="card-title">Smartphone X</h5>
+                                <p class="card-text flex-grow-1">Display OLED da 6.7 pollici, fotocamera avanzata e batteria a lunga durata.</p>
+                                <a href="#" class="btn btn-success mt-2">Dettagli</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Seconda colonna interna: 6 (desktop), 12 (mobile) -->
+                    <div class="col-12 col-lg-6">
+                        <div class="card h-100 shadow-sm">
+                            <img src="https://placehold.co/400x300/fd7e14/ffffff?text=Tablet+Ultra" class="card-img-top" alt="Tablet Ultra">
+                            <div class="card-body d-flex flex-column">
+                                <h5 class="card-title">Tablet Ultra</h5>
+                                <p class="card-text flex-grow-1">Versatilità e potenza in un design sottile. Perfetto per studio e intrattenimento.</p>
+                                <a href="#" class="btn btn-warning mt-2">Dettagli</a>
+                            </div>
+                        </div>
+                    </div>
+                    
                 </div>
-                
-                <!-- Body del Modal -->
-                <div class="modal-body">
-                    <p>
-                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-                        Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
-                    </p>
-                    <p>
-                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloribus, placeat consectetur! Et libero perspiciatis error neque. Optio asperiores aperiam impedit id, ipsam ipsa natus animi, ea ut necessitatibus dolorum maxime?
-                    </p>
-                    <p>
-                        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
-                    </p>
-                </div>
-                
-                <!-- Footer del Modal -->
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Chiudi</button>
-                </div>
-                
             </div>
+
+            <!-- Terza colonna: 3 (desktop), 12 (tablet), 12 (mobile) -->
+            <div class="col-12 col-md-12 col-lg-3">
+                <div class="card h-100 shadow-sm">
+                    <img src="https://placehold.co/400x300/e74c3c/ffffff?text=Cuffie+Premium" class="card-img-top" alt="Cuffie Premium">
+                    <div class="card-body d-flex flex-column">
+                        <h5 class="card-title">Cuffie Premium</h5>
+                        <p class="card-text flex-grow-1">Audio Hi-Fi con cancellazione del rumore attiva. Comfort superiore per ascolti prolungati.</p>
+                        <a href="#" class="btn btn-danger mt-2">Dettagli</a>
+                    </div>
+                </div>
+            </div>
+            
         </div>
     </div>
 
