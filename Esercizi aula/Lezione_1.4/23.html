@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Card con Modal</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.2/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body class="bg-light">
+    <div class="container py-5">
+        <div class="row justify-content-center">
+            <div class="col-12 col-md-6 col-lg-4">
+                
+                <!-- Card -->
+                <div class="card shadow-lg">
+                    <img src="https://placehold.co/400x300/0d6efd/ffffff?text=Prodotto+Premium" class="card-img-top" alt="Prodotto Premium">
+                    <div class="card-body">
+                        <h5 class="card-title">Smartwatch Avanzato</h5>
+                        <p class="card-text">
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
+                        </p>
+                        <!-- Bottone che apre il modal -->
+                        <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#detailsModal">
+                            Apri dettagli
+                        </button>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal -->
+    <div class="modal fade" id="detailsModal" tabindex="-1" aria-labelledby="detailsModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                
+                <!-- Header del Modal -->
+                <div class="modal-header">
+                    <h5 class="modal-title" id="detailsModalLabel">Dettagli Smartwatch Avanzato</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                
+                <!-- Body del Modal -->
+                <div class="modal-body">
+                    <p>
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                        Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+                    </p>
+                    <p>
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloribus, placeat consectetur! Et libero perspiciatis error neque. Optio asperiores aperiam impedit id, ipsam ipsa natus animi, ea ut necessitatibus dolorum maxime?
+                    </p>
+                    <p>
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+                    </p>
+                </div>
+                
+                <!-- Footer del Modal -->
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Chiudi</button>
+                </div>
+                
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.2/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
