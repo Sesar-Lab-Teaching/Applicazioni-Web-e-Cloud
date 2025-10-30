@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Film in Programmazione</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+        .film-card {
+            border: 1px solid #ccc;
+            margin-bottom: 20px;
+            padding: 10px;
+        }
+        img {
+            max-width: 200px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Film in Programmazione</h1>
+    
+    <button onclick="salvaDatiFilm()">Salva Dati Film</button>
+    <button onclick="cancellaStorage()">Cancella Storage</button>
+
+    <div id="filmContainer"></div>
+
+    <script>
+        function salvaDatiFilm() {
+            // Film 1
+            localStorage.setItem('film1-titolo', 'Oppenheimer');
+            localStorage.setItem('film1-trama', 'La storia di J. Robert Oppenheimer e del suo ruolo nello sviluppo della bomba atomica durante il Progetto Manhattan.');
+            localStorage.setItem('film1-locandina', 'https://images.unsplash.com/photo-1536440136628-849c177e76a1?w=400&h=600&fit=crop');
+
+            // Film 2
+            localStorage.setItem('film2-titolo', 'Barbie');
+            localStorage.setItem('film2-trama', 'Barbie viene espulsa da Barbieland per non essere una bambola perfetta. Parte per il mondo reale per trovare la felicità.');
+            localStorage.setItem('film2-locandina', 'https://images.unsplash.com/photo-1594908900066-3f47337549d8?w=400&h=600&fit=crop');
+
+            // Film 3
+            localStorage.setItem('film3-titolo', 'Dune: Parte Due');
+            localStorage.setItem('film3-trama', 'Paul Atreides si unisce ai Fremen in una vendetta contro coloro che hanno distrutto la sua famiglia, mentre affronta una scelta tra l\'amore e il destino dell\'universo.');
+            localStorage.setItem('film3-locandina', 'https://images.unsplash.com/photo-1478720568477-152d9b164e26?w=400&h=600&fit=crop');
+
+            mostraFilm();
+        }
+
+        function mostraFilm() {
+            const container = document.getElementById('filmContainer');
+            container.innerHTML = '';
+
+            for (let i = 1; i <= 3; i++) {
+                const titolo = localStorage.getItem(`film${i}-titolo`);
+                const trama = localStorage.getItem(`film${i}-trama`);
+                const locandina = localStorage.getItem(`film${i}-locandina`);
+
+                if (titolo && trama && locandina) {
+                    const filmCard = document.createElement('div');
+                    filmCard.className = 'film-card';
+                    filmCard.innerHTML = `
+                        <img src="${locandina}" alt="${titolo}">
+                        <h2>${titolo}</h2>
+                        <p>${trama}</p>
+                    `;
+                    container.appendChild(filmCard);
+                }
+            }
+
+            if (container.innerHTML === '') {
+                container.innerHTML = '<p>Nessun film trovato.</p>';
+            }
+        }
+
+        function cancellaStorage() {
+            for (let i = 1; i <= 3; i++) {
+                localStorage.removeItem(`film${i}-titolo`);
+                localStorage.removeItem(`film${i}-trama`);
+                localStorage.removeItem(`film${i}-locandina`);
+            }
+            mostraFilm();
+        }
+    </script>
+</body>
+</html>
