@@ -1,0 +1,10 @@
+{
+  "cinema": "Cinema Centrale",
+  "films": [
+    {"id": 1, "title": "Oppenheimer", "year": 2023, "time": "20:30", "room": "Sala 1"},
+    {"id": 2, "title": "Barbie", "year": 2023, "time": "16:00", "room": "Sala 3"},
+    {"id": 3, "title": "Inception", "year": 2010, "time": "20:00", "room": "Sala 2"},
+    {"id": 4, "title": "La La Land", "year": 2016, "time": "18:30", "room": "Sala 3"},
+    {"id": 5, "title": "Parasite", "year": 2019, "time": "20:30", "room": "Sala 1"}
+  ]
+}

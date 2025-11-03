@@ -1,0 +1,94 @@
+<!doctype html>
+<html lang="it">
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>31 - Local Storage (AULA)</title>
+  <style>
+    body {
+      font-family: system-ui, Arial;
+      margin: 20px
+    }
+
+    table {
+      border-collapse: collapse;
+      width: 100%
+    }
+
+    th,
+    td {
+      border: 1px solid #ccc;
+      padding: 8px;
+      text-align: left
+    }
+
+    caption {
+      font-weight: bold;
+      margin-bottom: 10px
+    }
+
+    .controls {
+      margin-bottom: 10px
+    }
+  </style>
+</head>
+
+<body>
+  <h1>Programmazione film — Local Storage (AULA)</h1>
+  <div class="controls">
+    <button id="save" onclick="save()">Salva</button>
+    <button id="clear" onclick="clearStorage()">Svuota localStorage</button>
+  </div>
+  <table id="films">
+    <caption>Elenco film</caption>
+    <thead>
+      <tr>
+        <th>ID</th>
+        <th>Titolo</th>
+        <th>Anno</th>
+        <th>Orario</th>
+        <th>Sala</th>
+      </tr>
+    </thead>
+    <tbody id="filmsBody"></tbody>
+  </table>
+
+  <script>
+    const storageKey = 'aula_films';
+    const films = [
+      {id:1, title:'Oppenheimer', year:2023, time:'20:30', room:'Sala 1'},
+      {id:2, title:'Barbie', year:2023, time:'16:00', room:'Sala 3'},
+      {id:3, title:'Inception', year:2010, time:'20:00', room:'Sala 2'},
+      {id:4, title:'La La Land', year:2016, time:'18:30', room:'Sala 3'},
+      {id:5, title:'Parasite', year:2019, time:'20:30', room:'Sala 1'}
+    ];
+
+    function render(list){
+      const tbody = document.getElementById('filmsBody');
+      tbody.innerHTML = '';
+      for(let i=0;i<list.length;i++){
+        const f = list[i];
+        const tr = document.createElement('tr');
+        tr.innerHTML = '<td>'+f.id+'</td><td>'+f.title+'</td><td>'+f.year+'</td><td>'+f.time+'</td><td>'+f.room+'</td>';
+        tbody.appendChild(tr);
+      }
+    }
+    var raw = localStorage.getItem(storageKey);
+    if(raw) render(JSON.parse(raw));
+    function save(){
+        localStorage.setItem(storageKey, JSON.stringify(films));
+        render(films);
+        alert('Dati salvati in localStorage');
+    }
+
+    function clearStorage(){
+      localStorage.removeItem(storageKey);
+      document.getElementById('filmsBody').innerHTML = '';
+    }
+
+   
+  </script>
+</body>
+
+</html>
