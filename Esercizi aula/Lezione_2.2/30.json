@@ -1,0 +1,19 @@
+{
+    "movies": [
+        {
+            "titolo": "Oppenheimer",
+            "trama": "La storia di J. Robert Oppenheimer e del suo ruolo nello sviluppo della bomba atomica durante il Progetto Manhattan.",
+            "locandina": "https://images.unsplash.com/photo-1536440136628-849c177e76a1?w=400&h=600&fit=crop"
+        },
+        {
+            "titolo": "Barbie",
+            "trama": "Barbie viene espulsa da Barbieland per non essere una bambola perfetta. Parte per il mondo reale per trovare la felicità.",
+            "locandina": "https://images.unsplash.com/photo-1594908900066-3f47337549d8?w=400&h=600&fit=crop"
+        },
+        {
+            "titolo": "Dune: Parte Due",
+            "trama": "Paul Atreides si unisce ai Fremen in una vendetta contro coloro che hanno distrutto la sua famiglia, mentre affronta una scelta tra l'amore e il destino dell'universo.",
+            "locandina": "https://images.unsplash.com/photo-1478720568477-152d9b164e26?w=400&h=600&fit=crop"
+        }
+    ]
+}
